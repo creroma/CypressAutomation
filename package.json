@@ -1,0 +1,14 @@
+{
+  "name": "cypresstest",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "qatester",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.8.1"
+  }
+}
