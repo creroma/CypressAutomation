@@ -9,7 +9,7 @@ export function Login(username,password) {
           .should('include','/dashboard');
   }
 
-describe('CypressLogin', () => {
+describe('CypresssLogin', () => {
 
   beforeEach(() => {
     cy.visit('https://rahulshettyacademy.com/client')
