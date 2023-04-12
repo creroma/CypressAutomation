@@ -29,7 +29,7 @@ describe('For Merging test conflicts', () => {
         .should('contain','*Enter Valid Email')
     });
 
-    it.only('Clicking save without data', () => {
+    it('Clicking save without data, new changes', () => {
 
       cy.get('.forgot-password-link').click()
 
