@@ -29,7 +29,7 @@ describe('For Merging test conflicts', () => {
         .should('contain','*Enter Valid Email')
     });
 
-    it('Clicking save without data, new changes', () => {
+    it('Clicking save without data, new changes and testing', () => {
 
       cy.get('.forgot-password-link').click()
 
@@ -38,5 +38,8 @@ describe('For Merging test conflicts', () => {
       cy.get('.invalid-feedback').should('have.length',3)
       
     })
+    it.only('newchanges', () => {
     
+      cy.get('.forgot-password-link').click()
+    })
   })
