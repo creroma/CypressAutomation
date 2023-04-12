@@ -24,7 +24,7 @@ describe('CypressRegistration', () => {
     
     }
 
-    it('Registration validations', () => {
+    it.only('Registration validations', () => {
   
       cy.get('.text-reset').click()
       Register('qa','tester','testuser1','1234567','Student','Male','Testing123','Testing')
@@ -40,7 +40,7 @@ describe('CypressRegistration', () => {
       
     });
 
-    it.only('Input Valid data upon registration', () => {
+    it('Input Valid data upon registration', () => {
 
       cy.get('.text-reset').click()
 
