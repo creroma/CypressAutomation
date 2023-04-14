@@ -1,13 +1,6 @@
 /// <reference types="Cypress"/>
 
-export function Login(username,password) {
-  cy.get('#userEmail').type(username);
-        cy.get('#userPassword').type(password);
-        cy.get('#login')
-          .click()
-          .url()
-          .should('include','/dashboard');
-  }
+import { Login1 } from './functions.cy.js';
 
 describe('CypresssLogin', () => {
 
@@ -18,28 +11,10 @@ describe('CypresssLogin', () => {
 
   })
 
-  function Login(username, password)
-    {
-        cy.get('#userEmail').type(username);
-        cy.get('#userPassword').type(password);
-        cy.get('#login')
-          .click()
-          .url()
-          .should('include','/dashboard');
-        
-    }
-
-  // it('Displays and error when login is invalid', () => {
-  
-  //   Login('invalid@gmail.com','invalidpassword')
-  //   cy.get('.toast-container')
-  //     .should('be.visible').and('contain','Incorrect email or password. ')
-    
-  // });
-
   it('Displays and error when login is valid', () => {
   
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
+
     cy.get('.left').should('contain','Automation')
       .url()
       .should('include','/dashboard')
