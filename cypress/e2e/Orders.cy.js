@@ -1,6 +1,7 @@
 /// <reference types="Cypress"/>
 
-import { Login } from './Login.cy.js'
+import { Login1 } from './functions.cy.js'
+
 
 describe('Orders', () => {
 
@@ -14,7 +15,9 @@ describe('Orders', () => {
     
   it('Order items', () => {
   
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
+
+    // AddToCartItems()
 
     cy.get(':nth-child(3) > .btn').click()
       .url()
@@ -34,7 +37,7 @@ describe('Orders', () => {
 
   it('Delete items on orders', () => {
 
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
 
     cy.get(':nth-child(3) > .btn').click()
       .url()
@@ -47,7 +50,7 @@ describe('Orders', () => {
 
   it.only('Back to shop and back to cart', () => {
 
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
 
     cy.get(':nth-child(3) > .btn').click()
       .url()

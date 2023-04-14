@@ -1,6 +1,7 @@
 /// <reference types="Cypress"/>
 
-import { Login } from './Login.cy.js'
+import { Login1 } from './functions.cy.js';
+
 
 describe('Signout', () => {
 
@@ -14,7 +15,7 @@ describe('Signout', () => {
     
   it('Signing out', () => {
   
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
 
     cy.get('.container').find('.card').should('have.length',3)
       .url()

@@ -1,6 +1,7 @@
 /// <reference types="Cypress"/>
 
-import { Login } from './Login.cy.js'
+import { Login1 } from './functions.cy.js';
+
 
 describe('HomeFilters', () => {
 
@@ -14,7 +15,7 @@ describe('HomeFilters', () => {
     
   it('Login and filter items', () => {
   
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
     
     cy.get('.left').should('contain','Automation')
       .url()

@@ -1,6 +1,7 @@
 /// <reference types="Cypress"/>
 
-import { Login } from './Login.cy.js'
+import { Login1,AddToCartItems } from './functions.cy.js'
+
 
 describe('Delete Items ', () => {
 
@@ -14,23 +15,21 @@ describe('Delete Items ', () => {
 
   it('Add Items on cart', () => {
 
-    Login('testuser2@yopmail.com','Testing123')
+    Login1('testuser2@yopmail.com','Testing123')
 
     //Add items on cart
 
-    cy.get('.container').find('.card-body').should('have.length',3)
-      .eq(0).contains(' Add To Cart').click()
-    cy.wait(500)
-    cy.get('.container').find('.card-body').should('have.length',3)
-      .eq(1).contains(' Add To Cart').click()
-    cy.wait(500)
-    cy.get('.container').find('.card-body').should('have.length',3)
-      .eq(2).contains(' Add To Cart').click()
+    AddToCartItems()
+
+    cy.get(':nth-child(4) > .btn').click()
+      .url()
+      .should('include','/dashboard/cart')
 
     //delete items on cart
 
     cy.get('.cart').find('.cartWrap').should('have.length',3)
-    cy.get('.btn-danger').contains('zara coat 3').click()
+    cy.get(':nth-child(1) > .items > .infoWrap > .removeWrap').find('.btn-danger').click()
+    
 
 
   })
