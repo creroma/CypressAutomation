@@ -38,7 +38,7 @@ describe('For Merging test conflicts', () => {
       cy.get('.invalid-feedback').should('have.length',3)
       
     })
-    it.only('newchanges', () => {
+    it('newchanges', () => {
     
       cy.get('.forgot-password-link').click()
     })

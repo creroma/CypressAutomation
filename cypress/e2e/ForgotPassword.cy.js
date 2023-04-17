@@ -19,7 +19,7 @@ describe('Forgot Password', () => {
 
     }
 
-    it.only('Validations on forgot password', () => {
+    it('Validations on forgot password', () => {
       
       cy.get('.forgot-password-link').click()  
       ForgotPass('qatesting1','Testing1','Testing')

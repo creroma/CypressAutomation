@@ -48,7 +48,7 @@ describe('Orders', () => {
 
   })
 
-  it.only('Back to shop and back to cart', () => {
+  it('Back to shop and back to cart', () => {
 
     Login1('testuser2@yopmail.com','Testing123')
 
