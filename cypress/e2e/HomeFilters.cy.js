@@ -1,6 +1,6 @@
 /// <reference types="Cypress"/>
 
-import { Login1 } from './functions.cy.js';
+import { Login1,ViewItems } from './functions.cy.js';
 
 
 describe('HomeFilters', () => {
@@ -16,6 +16,7 @@ describe('HomeFilters', () => {
   it('Login and filter items', () => {
   
     Login1('testuser2@yopmail.com','Testing123')
+    ViewItems()
     
     cy.get('.left').should('contain','Automation')
       .url()
@@ -28,6 +29,8 @@ describe('HomeFilters', () => {
       cy.get('#sidebar > form.ng-valid > :nth-child(3) > :nth-child(4) > input').click()
       cy.get('#sidebar > form.ng-valid > :nth-child(4) > :nth-child(5) > input').click()
       cy.get('.overlay-container').should('contain','No Products Found')
+
+
 
   });
 
